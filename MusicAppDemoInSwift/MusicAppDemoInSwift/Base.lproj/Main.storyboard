@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Reg-TJ-prp">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--iTunes RSS category-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MusicAppDemoInSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zXZ-q6-zLv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="mainCell" id="3iK-0e-hna">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3iK-0e-hna" id="MbS-V6-cad">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5RZ-MI-It9" kind="push" identifier="gotoSecond" id="Uoe-oH-jof"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zXZ-q6-zLv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7gR-jd-oq0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zXZ-q6-zLv" secondAttribute="bottom" id="Q11-1e-trf"/>
+                            <constraint firstAttribute="trailing" secondItem="zXZ-q6-zLv" secondAttribute="trailing" id="Sne-Ob-xeq"/>
+                            <constraint firstItem="zXZ-q6-zLv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WhN-yf-lqp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="iTunes RSS category" id="VdV-O3-x3g"/>
+                    <connections>
+                        <outlet property="myTableView" destination="zXZ-q6-zLv" id="0bi-BV-s8S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="558" y="275"/>
+        </scene>
+        <!--Detail playlist-->
+        <scene sceneID="0bj-6N-7nk">
+            <objects>
+                <tableViewController id="5RZ-MI-It9" customClass="SecondTableViewController" customModule="MusicAppDemoInSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4sg-0r-rT3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="secondCell" id="jmD-g3-2lY">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jmD-g3-2lY" id="Uag-Tr-Pzq">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fhD-Ma-8Jh" kind="push" identifier="gotoThird" id="gSf-4G-Kqb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5RZ-MI-It9" id="br4-i5-FBA"/>
+                            <outlet property="delegate" destination="5RZ-MI-It9" id="7ju-ii-z7a"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Detail playlist" id="KAk-Bd-86v"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gag-az-9xU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="275"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="SXR-u9-0Ya">
+            <objects>
+                <viewController id="qDn-rk-1Q0" customClass="WriteCommentsViewController" customModule="MusicAppDemoInSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YnQ-zY-9FI"/>
+                        <viewControllerLayoutGuide type="bottom" id="9cB-yG-dWw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AMJ-g4-KHy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcz-Rc-M7T">
+                                <rect key="frame" x="20" y="28" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Kwr-KA-pTH"/>
+                                    <constraint firstAttribute="width" secondItem="pcz-Rc-M7T" secondAttribute="height" multiplier="1:1" id="MPw-g4-6bb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="imageButtonProcess" destination="qDn-rk-1Q0" eventType="touchUpInside" id="ief-ly-1gq"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RJo-wf-f7m">
+                                <rect key="frame" x="20" y="126" width="280" height="379"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UA-ec-454">
+                                <rect key="frame" x="136" y="58" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4UA-ec-454" secondAttribute="height" multiplier="8:5" id="4VW-CN-cCQ"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonProcess:" destination="qDn-rk-1Q0" eventType="touchUpInside" id="X1A-Hu-56a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeH-BA-GP8">
+                                <rect key="frame" x="222" y="58" width="34" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AeH-BA-GP8" secondAttribute="height" multiplier="17:15" id="Fwc-gM-7Oe"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="doneButtonProcess:" destination="qDn-rk-1Q0" eventType="touchUpInside" id="k1m-2Z-6ub"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pcz-Rc-M7T" firstAttribute="top" secondItem="YnQ-zY-9FI" secondAttribute="bottom" constant="8" id="1Fb-k2-rOe"/>
+                            <constraint firstItem="RJo-wf-f7m" firstAttribute="top" secondItem="pcz-Rc-M7T" secondAttribute="bottom" constant="8" id="6pT-6Z-1dA"/>
+                            <constraint firstItem="4UA-ec-454" firstAttribute="leading" secondItem="pcz-Rc-M7T" secondAttribute="trailing" constant="26" id="BRE-Re-EY9"/>
+                            <constraint firstItem="pcz-Rc-M7T" firstAttribute="leading" secondItem="AMJ-g4-KHy" secondAttribute="leading" constant="20" id="G7B-gn-HDF"/>
+                            <constraint firstAttribute="trailing" secondItem="RJo-wf-f7m" secondAttribute="trailing" constant="20" id="PjO-3v-OY7"/>
+                            <constraint firstItem="RJo-wf-f7m" firstAttribute="leading" secondItem="AMJ-g4-KHy" secondAttribute="leading" constant="20" id="Vc8-MR-mzJ"/>
+                            <constraint firstItem="4UA-ec-454" firstAttribute="top" secondItem="YnQ-zY-9FI" secondAttribute="bottom" constant="38" id="VyI-zw-YGj"/>
+                            <constraint firstAttribute="trailing" secondItem="AeH-BA-GP8" secondAttribute="trailing" constant="64" id="WSQ-Oy-ug0"/>
+                            <constraint firstItem="AeH-BA-GP8" firstAttribute="leading" secondItem="4UA-ec-454" secondAttribute="trailing" constant="38" id="Yjw-pB-nat"/>
+                            <constraint firstItem="AeH-BA-GP8" firstAttribute="top" secondItem="YnQ-zY-9FI" secondAttribute="bottom" constant="38" id="jz0-SL-hDD"/>
+                            <constraint firstItem="9cB-yG-dWw" firstAttribute="top" secondItem="RJo-wf-f7m" secondAttribute="bottom" constant="63" id="m1V-1i-DCG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Compose" id="2mB-Lv-28S"/>
+                    <connections>
+                        <outlet property="imageButton" destination="pcz-Rc-M7T" id="sU4-7T-XU5"/>
+                        <outlet property="textInput" destination="RJo-wf-f7m" id="yaw-kT-9Y8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAt-c1-RdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="948"/>
+        </scene>
+        <!--Comments-->
+        <scene sceneID="p7E-ye-NJp">
+            <objects>
+                <tableViewController id="fhD-Ma-8Jh" customClass="CommentTableViewController" customModule="MusicAppDemoInSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vUf-qj-fgb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="thirdCell" id="KZD-X2-jIq">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KZD-X2-jIq" id="T0P-K1-EsZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qDn-rk-1Q0" kind="modal" identifier="gotoUpdate" id="3Zc-al-2Mc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fhD-Ma-8Jh" id="KBS-Gv-Qqf"/>
+                            <outlet property="delegate" destination="fhD-Ma-8Jh" id="v71-wc-vNN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Comments" id="gfb-80-ksm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="J3C-rm-DQt">
+                            <connections>
+                                <segue destination="qDn-rk-1Q0" kind="modal" identifier="gotoFourth" id="vsJ-Jc-o47"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0g-si-KcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938" y="953"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qv1-0J-2Fg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Reg-TJ-prp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ke-PL-BuT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oMU-eU-e6q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTs-ab-iKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="275"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vsJ-Jc-o47"/>
+    </inferredMetricsTieBreakers>
+</document>
